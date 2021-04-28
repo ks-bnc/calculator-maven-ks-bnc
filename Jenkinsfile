@@ -25,7 +25,7 @@ pipeline {
             steps{
         post {
             always{
-                junit '**/src/test/java/com/mkyong/hashing/AppTest.java'
+                echo 'working....'
             }
         }
             }
