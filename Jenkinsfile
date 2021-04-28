@@ -1,20 +1,40 @@
 pipeline {
-agent any
-stages {
-  stage ("build") {
-      steps {
-        echo "building the application..."
-       }
-      }
-    stage ("test") {
-       steps {
-        echo "testing the application..."
+    agent any
+
+    stages {
+        stage('Build') {
+            steps {
+                echo 'Building..'
+                sh 'mvn clean compile'
+                // bat '.\mvnw clean compolie'
+            }
         }
-       }
-    stage ("deploy") {
-        steps {
-          echo "deploying the application"
+        stage('Test') {
+            steps {
+                //dir('SOURCE DIRECTORY') {
+                //git url: 'https://github.com/ks-bnc/multiple-scm-1.git'
+                //}
+                //dir('TEST DIRECTORY') {
+                //git url: 'https://github.com/ks-bnc/multiple-scm-2.git'
+                //}
+                sh 'mvn test'
+                
+            }
         }
-      }
+        stage('post') {
+            steps{
+        post {
+            always{
+                junit '**/src/test/java/com/mkyong/hashing/AppTest.java'
+            }
+        }
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Deploying....'
+            }
+        }
     }
 }
+ 
