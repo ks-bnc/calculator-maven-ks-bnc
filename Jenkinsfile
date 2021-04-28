@@ -26,6 +26,7 @@ pipeline {
                 echo 'Deploying....'
             }
         }
+    }
         
         post {
             always{
@@ -40,8 +41,5 @@ pipeline {
                 sh 'sudo cp -r /var/lib/jenkins/workspace/multiscm-pipeline-good-test-source/src/test /var/lib/jenkins/workspace/osszemasolos/src'
                 echo 'done'
             }
-        }
-        
-    
+        }   
 }
-} 
