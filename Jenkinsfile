@@ -34,10 +34,10 @@ pipeline {
                 sh 'sudo cp -a /var/lib/jenkins/workspace/multiscm-pipeline/. /var/lib/jenkins/workspace/osszemasolos'
                 echo 'done'
                 echo 'tesztallomany torlese'
-                sh 'rm -rf /var/lib/jenkins/workspace/osszemasolos/multiscm-pipeline/src/test '
+                sh 'rm -rf /var/lib/jenkins/workspace/osszemasolos/src/test '
                 echo 'done'
                 echo 'jo tesztallomany beillesztese a projektbe'
-                sh 'sudo cp -r /var/lib/jenkins/workspace/multiscm-pipeline-good-test-source/src/test /var/lib/jenkins/workspace/osszemasolos/multiscm-pipeline/src'
+                sh 'sudo cp -r /var/lib/jenkins/workspace/multiscm-pipeline-good-test-source/src/test /var/lib/jenkins/workspace/osszemasolos/src'
                 echo 'done'
             }
         }
