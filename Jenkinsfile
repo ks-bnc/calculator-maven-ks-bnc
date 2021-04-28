@@ -33,6 +33,7 @@ pipeline {
                 echo 'copying files to destination'
                 sh 'sudo cp -r /var/lib/jenkins/workspace/multiscm-pipeline /var/lib/jenkins/workspace/osszemasolos'
                 echo 'done'
+                sh 'rmdir /var/lib/jenkins/workspace/osszemasolos/multiscm-pipeline/src/test'
             }
         }
         
