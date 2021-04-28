@@ -31,7 +31,7 @@ pipeline {
             always{
                 sh 'pwd'
                 echo 'copying files to destination'
-                sh 'cp /var/lib/jenkins/workspace/multiscm-pipeline /var/lib/jenkins/workspace/osszemasolos'
+                sh 'cp path/to/var/lib/jenkins/workspace/multiscm-pipeline path/to/var/lib/jenkins/workspace/osszemasolos'
                 echo 'done'
             }
         }
