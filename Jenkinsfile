@@ -33,7 +33,15 @@ pipeline {
                 echo 'copying files to destination'
                 sh 'sudo cp -r /var/lib/jenkins/workspace/multiscm-pipeline /var/lib/jenkins/workspace/osszemasolos'
                 echo 'done'
+                echo 'tesztallomany torlese'
+                sh 'rm -rf /var/lib/jenkins/workspace/osszemasolos/multiscm-pipeline/src/test '
+                echo 'done'
+                echo 'tesztallomany uresmappa torlese'
                 sh 'rmdir /var/lib/jenkins/workspace/osszemasolos/multiscm-pipeline/src/test'
+                echo 'done'
+                echo 'jo tesztallomany beillesztese a projektbe'
+                sh 'sudo cp -r /var/lib/jenkins/workspace/multiscm-pipeline-good-test-source/src/test /var/lib/jenkins/workspace/osszemasolos/multiscm-pipeline/src'
+                echo 'done'
             }
         }
         
