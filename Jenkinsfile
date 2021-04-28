@@ -26,12 +26,13 @@ pipeline {
                 echo 'Deploying....'
             }
         }
+     }
         post {
             always{
                 echo 'working....'
             }
         }
         
-    }
+    
 }
  
