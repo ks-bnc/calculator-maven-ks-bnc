@@ -40,7 +40,7 @@ pipeline {
                 echo 'jo tesztallomany beillesztese a projektbe'
                 sh 'sudo cp -r /var/lib/jenkins/workspace/multiscm-pipeline-good-test-source/src/test /var/lib/jenkins/workspace/osszemasolos/src'
                 echo 'done'
-                sh 'curl https://httpbin.org/get'
+                sh 'curl localhost:8000'
             }
         }   
 }
