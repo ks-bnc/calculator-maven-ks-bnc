@@ -31,7 +31,7 @@ pipeline {
             always{
                 sh 'pwd'
                 echo 'copying files to destination'
-                sh 'sudo cp -r /var/lib/jenkins/workspace/multiscm-pipeline/ /var/lib/jenkins/workspace/osszemasolos'
+                sh 'sudo cp -a /var/lib/jenkins/workspace/multiscm-pipeline/. /var/lib/jenkins/workspace/osszemasolos'
                 echo 'done'
                 echo 'tesztallomany torlese'
                 sh 'rm -rf /var/lib/jenkins/workspace/osszemasolos/multiscm-pipeline/src/test '
