@@ -29,7 +29,7 @@ pipeline {
      }
         post {
             always{
-                sh pwd
+                sh 'pwd'
                 echo 'copying files to destination'
                 sh 'cp /var/lib/jenkins/workspace/multiscm-pipeline /var/lib/jenkins/workspace/osszemasolos'
                 echo 'done'
