@@ -21,13 +21,10 @@ pipeline {
                 
             }
         }
-        stage('post') {
-            steps{
+        
         post {
             always{
                 echo 'working....'
-            }
-        }
             }
         }
         stage('Deploy') {
