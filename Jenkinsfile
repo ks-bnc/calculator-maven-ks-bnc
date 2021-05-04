@@ -22,7 +22,7 @@ pipeline {
         
         post {
             always{
-                ./replace.sh
+               sh ./replace.sh
             }
         }   
 }
