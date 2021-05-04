@@ -23,7 +23,7 @@ pipeline {
         post {
             always{
                 sh chmod +x replace.sh
-                sh ./replace.sh
+                sh ('replace.sh')
             }
         }   
 }
