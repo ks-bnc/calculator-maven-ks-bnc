@@ -1,3 +1,4 @@
+sh cd /var/lib/jenkins/workspace/multiscm-pipeline
 sh 'pwd'
 echo 'copying files to destination'
 sh 'sudo cp -a /var/lib/jenkins/workspace/multiscm-pipeline/. /var/lib/jenkins/workspace/osszemasolos'
