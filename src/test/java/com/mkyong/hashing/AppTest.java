@@ -35,7 +35,7 @@ public class AppTest
     {
         assertTrue( true );
     }
-    
+    //innen
     public boolean isEvenNumber(int number){
          
         boolean result = false;
@@ -50,5 +50,5 @@ public class AppTest
         MyAssertTrueTest asft = new MyAssertTrueTest();
         assertTrue(asft.isEvenNumber(4));
     }
-}
+    //ide
 }
