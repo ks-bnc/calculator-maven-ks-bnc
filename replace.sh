@@ -1,5 +1,5 @@
 cd ${WORKSPACE}/multiscm-pipeline
-'pwd'
+pwd
 echo 'copying files to destination'
 'cp -a ${WORKSPACE}/multiscm-pipeline/. ${WORKSPACE}/osszemasolos'
 echo 'done'
