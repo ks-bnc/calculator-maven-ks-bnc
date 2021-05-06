@@ -22,7 +22,6 @@ pipeline {
         
         post {
             always{
-                sh 'cd $WORKSPACE/var/lib/jenkins/workspace/multiscm-pipeline'
                 sh 'chmod +x replace.sh'
                 sh ('./replace.sh')
             }
