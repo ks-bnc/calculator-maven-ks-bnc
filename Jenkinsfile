@@ -22,6 +22,7 @@ pipeline {
         
         post {
             always{
+                sh 'cd $WORKSPACE/multiscm-pipeline'
                 sh 'chmod +x replace.sh'
                 sh ('./replace.sh')
             }
