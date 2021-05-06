@@ -1,4 +1,5 @@
 cd ${WORKSPACE}/multiscm-pipeline
+chmod +x replace.sh
 pwd
 echo 'copying files to destination'
 'cp -a ${WORKSPACE}/multiscm-pipeline/. ${WORKSPACE}/osszemasolos'
