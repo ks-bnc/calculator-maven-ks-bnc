@@ -28,10 +28,10 @@ pipeline {
                 sh './replace.sh'
             }
             success {
-            githubNotify status: "SUCCESS", credentialsId: "jenkins-webhook", account: "ks-bnc", repo: "calculator-maven-ks-bnc"
+            githubNotify status: "SUCCESS", credentialsId: "jenkins-webhook", account: "ks-bnc", repo: "calculator-maven-ks-bnc", description: "wut"
         }
         failure {
-            githubNotify status: "FAILURE", credentialsId: "jenkins-webhook", account: "ks-bnc", repo: "calculator-maven-ks-bnc"
+            githubNotify status: "FAILURE", credentialsId: "jenkins-webhook", account: "ks-bnc", repo: "calculator-maven-ks-bnc", description: "wut"
         }
         }   
 }
