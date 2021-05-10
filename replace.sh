@@ -1,4 +1,4 @@
-cd ${WORKSPACE}
+echo ${WORKSPACE}
 chmod +x replace.sh
 pwd
 echo 'copying files to destination'
