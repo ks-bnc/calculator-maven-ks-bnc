@@ -2,6 +2,14 @@ pipeline {
     agent any
 
     stages {
+        stage('Replace student source') {
+            steps {
+                sh 'cd $WORKSPACE'
+                sh 'chmod +x replace.sh'
+                sh './replace.sh'
+            }
+        }
+        
         stage('Build') {
             steps {
                 echo 'Building..'
@@ -22,11 +30,6 @@ pipeline {
     }
         
         post {
-            always{
-                sh 'cd $WORKSPACE'
-                sh 'chmod +x replace.sh'
-                sh './replace.sh'
-            }
             success {
             githubNotify status: "SUCCESS", credentialsId: "jenkins-webhook", account: "ks-bnc", repo: "calculator-maven-ks-bnc", description: "wut", sha: "${GIT_COMMIT}"
         }
