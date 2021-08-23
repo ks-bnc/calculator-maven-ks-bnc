@@ -12,7 +12,7 @@ pipeline {
         
         stage('Build') {
             steps {
-                echo 'Buildingggggggg.'
+                echo 'Buildinfg.'
                 sh 'mvn clean compile'
             }
         }
