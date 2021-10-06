@@ -4,15 +4,16 @@ pipeline {
     stages {
         stage('Replace student source') {
             steps {
-                sh 'cd $WORKSPACE'
-                sh 'chmod +x replace.sh'
-                sh './replace.sh'
+                echo 'step'
+                //sh 'cd $WORKSPACE'
+                //sh 'chmod +x replace.sh'
+                //sh './replace.sh'
             }
         }
         
         stage('Build') {
             steps {
-                echo 'Buildinfg.'
+                echo 'Building.'
                 sh 'mvn clean compile'
             }
         }
