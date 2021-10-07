@@ -5,7 +5,7 @@ spec:
   containers:
   - name: jenkins
     image: maven:3.8.3-jdk-11
-    command:
+    //command:
     //- sleep
     args:
     - infinity
