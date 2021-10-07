@@ -1,44 +1,42 @@
-def podTemplate = """
-apiVersion: v1
-kind: Pod
-spec:
-  containers:
-  - name: jenkins
-    image: maven:3.8.3-jdk-11
-    command:
-    - sleep
-    args:
-    - infinity
-    volumeMounts:
-      - name: workspace-volume
-        mountPath: /home/jenkins/agent
-    workingDir: "/home/jenkins/agent"
-  volumes:
-      - name: "workspace-volume"
-        persistentVolumeClaim:
-          claimName: "jenkins-claim"
-          readOnly: false
-"""
 pipeline {
-    agent none
-    stages {
-        stage("Parallel") {
-            parallel {
-                stage("1.jenkins") {
-                    agent {
-                        kubernetes {
-                            yaml podTemplate
-                            defaultContainer 'jenkins'
-                        }
-                    }
-                    steps {
-                        sh """
-                            mvn clean package
-                        """
-                    }
-                }
+    agent any
+    
+    environment{
+mavenHome = tool 'myMaven'
+}
 
+    stages {
+        stage('Replace student source') {
+            steps {
+                echo 'step'
+                //sh 'cd $WORKSPACE'
+                //sh 'chmod +x replace.sh'
+                //sh './replace.sh'
+               // sh 'mvn clean install'
+               // sh 'mvn -version'
+            }
+        }
+        
+        stage('Build') {
+            steps {
+                echo 'Building.'
+                sh 'mvn clean package'
+            }
+        }
+        stage('Test') {
+            steps {
+                sh 'mvn test'
+                sh 'printenv'
             }
         }
     }
+        
+        post {
+            success {
+            githubNotify status: "SUCCESS", credentialsId: "jenkins-webhook", account: "kiss.bence.599@gmail.com", repo: "calculator-maven-ks-bnc", description: "wut", sha: "${GIT_COMMIT}"
+        }
+        failure {
+            githubNotify status: "FAILURE", credentialsId: "jenkins-webhook", account: "kiss.bence.599@gmail.com", repo: "calculator-maven-ks-bnc", description: "wut", sha: "${GIT_COMMIT}"
+        }
+        }   
 }
