@@ -1,5 +1,9 @@
 pipeline {
     agent any
+    
+    environment{
+mavenHome = tool 'myMaven'
+}
 
     stages {
         stage('Replace student source') {
