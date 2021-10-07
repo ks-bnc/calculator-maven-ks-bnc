@@ -13,7 +13,7 @@ mavenHome = tool 'myMaven'
                 //sh 'chmod +x replace.sh'
                 //sh './replace.sh'
                // sh 'mvn clean install'
-                sh 'mvn -version'
+               // sh 'mvn -version'
             }
         }
         
