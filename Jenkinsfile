@@ -6,7 +6,7 @@ spec:
   - name: jenkins
     image: maven:3.8.3-jdk-11
     command:
-    - sleep
+    //- sleep
     args:
     - infinity
     volumeMounts:
