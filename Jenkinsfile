@@ -12,7 +12,7 @@ mavenHome = tool 'myMaven'
                 //sh 'cd $WORKSPACE'
                 //sh 'chmod +x replace.sh'
                 //sh './replace.sh'
-                sh 'mvn clean install'
+               // sh 'mvn clean install'
                 sh 'mvn -version'
             }
         }
