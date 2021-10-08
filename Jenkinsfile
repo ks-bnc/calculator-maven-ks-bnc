@@ -5,7 +5,7 @@ pipeline {
 mavenHome = tool 'myMaven'
 }
     tools {
-    maven 'M3'
+    maven 'myMaven'
   }
 
     stages {
