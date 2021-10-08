@@ -4,6 +4,9 @@ pipeline {
     environment{
 mavenHome = tool 'myMaven'
 }
+    tools {
+    maven 'M3'
+  }
 
     stages {
         stage('Replace student source') {
