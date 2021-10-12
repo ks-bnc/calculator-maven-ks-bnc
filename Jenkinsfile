@@ -17,6 +17,7 @@ mavenHome = tool 'myMaven'
                 //sh './replace.sh'
                // sh 'mvn clean install'
                // sh 'mvn -version'
+                echo 'homongyammaaa na'
             }
         }
         
