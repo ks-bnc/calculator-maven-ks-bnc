@@ -4,31 +4,59 @@ import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
 
-/**
- * Unit test for simple App.
- */
-public class AppTest 
-    extends TestCase
-{
-    /**
-     * Create the test case
-     *
-     * @param testName name of the test case
-     */
-    public AppTest( String testName )
+private class AssertTrueTest {
+
+    AssertTrueTest att;
+
+    public boolean isPrime(int number)
     {
-        super( testName );
+        for (int i = 2; i <=Math.sqrt(number); i++) {
+            if(number%i==0)
+                return false;
+        }
+        return true;
     }
 
-    /**
-     * @return the suite of tests being tested
-     */
-    public static Test suite()
+    @BeforeEach
+    public void beforeEachTest()
     {
-        return new TestSuite( AppTest.class );
+        att = new AssertTrueTest();
     }
 
-    /**
-     * Rigourous Test :-)
-     */
+    //assertTrue(boolean condition)
+    @Test
+    public void primeNumberTestwithCondition(){
+        Assertions.assertTrue(att.isPrime(5));
+    }
+
+    // assertTrue(boolean condition, String message)
+    @Test
+    public void primeNumberTestwithConditionAndMessage(){
+        Assertions.assertTrue(att.isPrime(91),"Number is not prime");
+    }
+
+    // assertTrue(BooleanSupplier booleanSupplier)
+    @Test
+    public void primeNumberTestWithBooleanSupplier(){
+        Assertions.assertTrue(() -> att.isPrime(7));
+    }
+
+    //  assertTrue(boolean condition, Supplier<String> messageSupplier)
+    @Test
+    public void primeNumberTestWithConditionAndSupplier(){
+        Assertions.assertTrue(att.isPrime(13),() -> "Number is not prime");
+    }
+
+    // assertTrue(BooleanSupplier booleanSupplier, String message)
+    @Test
+    public void primeNumberTestWithBooleanSupplierAndMessage(){
+        Assertions.assertTrue(() -> att.isPrime(17),"Number is not prime");
+    }
+
+    // assertTrue(BooleanSupplier booleanSupplier, Supplier<String> messageSupplier)
+    @Test
+    public void primeNumberTestWithBooleanSupplierAndSupplier(){
+        Assertions.assertTrue(() -> att.isPrime(89),() -> "Number is not prime");
+    }
 }
+
