@@ -36,10 +36,10 @@ mavenHome = tool 'myMaven'
         
         post {
             success {
-            githubNotify status: "SUCCESS", credentialsId: "jenkins-webhook", account: "ks-bnc", repo: "calculator-maven-ks-bnc", description: "wut", sha: "${GIT_COMMIT}"
+            githubNotify status: "SUCCESS", credentialsId: "jenkins-webhook7", account: "ks-bnc", repo: "calculator-maven-ks-bnc", description: "wut", sha: "${GIT_COMMIT}"
         }
         failure {
-            githubNotify status: "FAILURE", credentialsId: "jenkins-webhook", account: "ks-bnc", repo: "calculator-maven-ks-bnc", description: "wut", sha: "${GIT_COMMIT}"
+            githubNotify status: "FAILURE", credentialsId: "jenkins-webhook7", account: "ks-bnc", repo: "calculator-maven-ks-bnc", description: "wut", sha: "${GIT_COMMIT}"
         }
         }   
 }
