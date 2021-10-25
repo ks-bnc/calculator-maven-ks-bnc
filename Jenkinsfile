@@ -24,12 +24,12 @@ mavenHome = tool 'myMaven'
         stage('Build') {
             steps {
                 echo 'Building.'
-                sh 'mvn clean compile'
+                sh 'mvn package'
             }
         }
         stage('Test') {
             steps {
-                sh 'mvn test'
+                //sh 'mvn test'
                 sh 'printenv'
             }
         }
